@@ -1,0 +1,985 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="description" content="LA OPTICA EYECARE: eye tests, prescription glasses, sunglasses and lens solutions in Muthalakodam, Thodupuzha.">
+    <title>LA OPTICA EYECARE | Optical Shop & Eye Tests in Thodupuzha</title>
+
+    <style>
+        :root {
+            --green: #103f3b;
+            --deep: #092926;
+            --gold: #d09a55;
+            --cream: #faf6ef;
+            --sand: #ece0cc;
+            --text: #183633;
+            --muted: #60716d;
+            --radius: 18px;
+            --shadow: 0 16px 40px #0827241a
+        }
+
+        * {
+            box-sizing: border-box
+        }
+
+        html {
+            scroll-behavior: smooth
+        }
+
+        body {
+            margin: 0;
+            background: var(--cream);
+            color: var(--text);
+            font: 16px/1.6 Arial,Helvetica,sans-serif
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            display: block;
+            object-fit: cover
+        }
+
+        .wrap {
+            width: min(1120px,calc(100% - 40px));
+            margin: auto
+        }
+
+        .eyebrow {
+            color: var(--gold);
+            font-size: .76rem;
+            font-weight: 800;
+            letter-spacing: .13em;
+            text-transform: uppercase
+        }
+
+        .btn {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            gap: .45rem;
+            padding: .82rem 1.15rem;
+            border: 2px solid var(--gold);
+            border-radius: 999px;
+            font-weight: 800;
+            cursor: pointer;
+            transition: .2s
+        }
+
+            .btn:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 8px 20px #0002
+            }
+
+            .btn.gold {
+                border-color: var(--gold);
+                background: var(--gold);
+                color: var(--deep)
+            }
+
+            .btn.light {
+                border-color: #fff;
+                color: #fff
+            }
+
+            .btn.outline {
+                border-color: var(--green);
+                color: var(--green)
+            }
+
+        h1, h2, h3 {
+            line-height: 1.12
+        }
+
+        h1, h2 {
+            font-family: Georgia,serif;
+            letter-spacing: -.035em
+        }
+
+        header {
+            position: absolute;
+            width: 100%;
+            z-index: 5;
+            color: #fff
+        }
+
+        .nav {
+            height: 78px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem
+        }
+
+        .brand {
+            font-weight: 900;
+            letter-spacing: .12em
+        }
+
+            .brand small {
+                display: block;
+                color: #f2cca0;
+                font-size: .56rem;
+                letter-spacing: .25em
+            }
+
+        .links {
+            display: flex;
+            gap: 1.25rem;
+            font-size: .9rem;
+            font-weight: bold
+        }
+
+            .links a:hover {
+                color: #f5c68e
+            }
+
+        .nav-actions {
+            display: flex;
+            align-items: center;
+            gap: .65rem
+        }
+
+        .theme-toggle {
+            display: inline-flex;
+            align-items: center;
+            gap: .38rem;
+            padding: .56rem .72rem;
+            border: 1px solid #ffffffa8;
+            border-radius: 999px;
+            background: #ffffff12;
+            color: #fff;
+            font: 700 .78rem Arial,Helvetica,sans-serif;
+            cursor: pointer
+        }
+
+            .theme-toggle:hover {
+                background: #fff;
+                color: var(--green)
+            }
+
+        .hero {
+            min-height: 675px;
+            position: relative;
+            display: grid;
+            align-items: end;
+            color: #fff;
+            overflow: hidden;
+            background: var(--deep)
+        }
+
+            .hero > img {
+                position: absolute;
+                inset: 0
+            }
+
+            .hero:after {
+                content: "";
+                position: absolute;
+                inset: 0;
+                background: linear-gradient(90deg,#061d1bdd 0%,#092926aa 42%,#09292620 100%)
+            }
+
+        .hero-copy {
+            position: relative;
+            z-index: 1;
+            padding: 150px 0 95px;
+            max-width: 720px
+        }
+
+        .hero h1 {
+            font-size: clamp(3rem,6vw,5.5rem);
+            margin: .2rem 0 1rem
+        }
+
+        .hero p {
+            max-width: 560px;
+            font-size: 1.13rem
+        }
+
+        .actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: .8rem;
+            margin-top: 1.7rem
+        }
+
+        .hero-note {
+            position: absolute;
+            z-index: 1;
+            bottom: 0;
+            right: max(20px,calc((100vw - 1120px)/2));
+            padding: .85rem 1.25rem;
+            border-radius: 16px 16px 0 0;
+            background: var(--cream);
+            color: var(--green);
+            font-weight: bold
+        }
+
+        section {
+            padding: 90px 0
+        }
+
+        .intro {
+            display: grid;
+            grid-template-columns: 1.1fr .9fr;
+            align-items: center;
+            gap: 60px
+        }
+
+            .intro h2, .title {
+                font-size: clamp(2.15rem,4.4vw,3.8rem);
+                margin: .35rem 0 1rem
+            }
+
+            .intro p, .sub {
+                color: var(--muted)
+            }
+
+        .photo {
+            height: 455px;
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow)
+        }
+
+        .benefits {
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            gap: 13px;
+            margin-top: 1.5rem
+        }
+
+        .benefit {
+            border-left: 2px solid var(--gold);
+            padding: .25rem 0 .25rem .75rem;
+            font-size: .85rem;
+            font-weight: bold
+        }
+
+        .services {
+            background: var(--deep);
+            color: #fff
+        }
+
+            .services .sub {
+                color: #d4e1dc
+            }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            gap: 16px;
+            margin-top: 2.2rem
+        }
+
+        .card {
+            padding: 1.5rem;
+            border: 1px solid #ffffff23;
+            border-radius: 15px;
+            background: #fff0
+        }
+
+            .card b {
+                display: block;
+                color: #f4c98e;
+                font-size: 1.35rem
+            }
+
+            .card h3 {
+                margin: .55rem 0 .4rem
+            }
+
+            .card p {
+                color: #dae6e1;
+                font-size: .92rem;
+                margin: 0
+            }
+
+        .brands {
+            background: var(--sand);
+            text-align: center
+        }
+
+        .brand-list {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-top: 2rem
+        }
+
+        .brand-pill {
+            padding: .75rem 1.15rem;
+            border-radius: 999px;
+            background: #fff;
+            color: var(--green);
+            font-weight: 800;
+            box-shadow: 0 3px 11px #0000000d
+        }
+
+        .offer {
+            margin-top: 2.3rem;
+            padding: 1.35rem;
+            border-radius: 14px;
+            background: var(--green);
+            color: #fff
+        }
+
+            .offer strong {
+                color: #f5cc93
+            }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: 1.3fr .85fr .85fr;
+            grid-template-rows: 230px 230px;
+            gap: 14px;
+            margin-top: 2rem
+        }
+
+            .gallery figure {
+                margin: 0;
+                overflow: hidden;
+                border-radius: 13px;
+                position: relative
+            }
+
+                .gallery figure:first-child {
+                    grid-row: span 2
+                }
+
+            .gallery figcaption {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                padding: 1rem;
+                background: linear-gradient(transparent,#000b);
+                color: #fff;
+                font-weight: bold;
+                font-size: .9rem
+            }
+
+        .reviews {
+            background: #f1e8db
+        }
+
+        .review-grid {
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            gap: 16px;
+            margin-top: 2rem
+        }
+
+        .review {
+            background: #fff;
+            padding: 1.4rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px #0929260d
+        }
+
+        .stars {
+            color: #d9982e;
+            letter-spacing: .1em
+        }
+
+        .review blockquote {
+            margin: 1rem 0;
+            color: #354a46;
+            font-style: italic
+        }
+
+        .review cite {
+            font-style: normal;
+            font-size: .88rem;
+            font-weight: bold
+        }
+
+        .booking {
+            background: var(--green);
+            color: #fff
+        }
+
+        .booking-grid {
+            display: grid;
+            grid-template-columns: .82fr 1.18fr;
+            gap: 56px;
+            align-items: start
+        }
+
+        .booking h2 {
+            font-size: clamp(2.2rem,4vw,3.7rem);
+            margin: .4rem 0 1rem
+        }
+
+        .booking p {
+            color: #dce9e4
+        }
+
+        .booking-form {
+            padding: 1.35rem;
+            border-radius: 16px;
+            background: #fff;
+            color: var(--text)
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px
+        }
+
+        .field {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            font-size: .83rem;
+            font-weight: bold
+        }
+
+            .field.full {
+                grid-column: 1/-1
+            }
+
+        input, select, textarea {
+            width: 100%;
+            padding: .75rem;
+            border: 1px solid #c8d1cd;
+            border-radius: 8px;
+            background: #fff;
+            color: #183633;
+            font: inherit
+        }
+
+        textarea {
+            min-height: 80px;
+            resize: vertical
+        }
+
+        .form-note {
+            font-size: .76rem;
+            color: #65736f;
+            margin: .7rem 0
+        }
+
+        .faq {
+            display: grid;
+            grid-template-columns: .8fr 1.2fr;
+            gap: 60px
+        }
+
+        .faq-list details {
+            border-bottom: 1px solid #cfc5b5;
+            padding: 1rem 0
+        }
+
+        .faq-list summary {
+            font-weight: 800;
+            cursor: pointer
+        }
+
+        .faq-list p {
+            color: var(--muted);
+            margin: .7rem 0 0
+        }
+
+        .visit {
+            padding: 0;
+            background: var(--sand)
+        }
+
+        .visit-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr
+        }
+
+        .visit-copy {
+            padding: 80px max(20px,calc((100vw - 1120px)/2));
+            padding-right: 60px
+        }
+
+        .contact {
+            list-style: none;
+            padding: 0
+        }
+
+            .contact li {
+                border-bottom: 1px solid #1836332b;
+                padding: .72rem 0
+            }
+
+        .map {
+            min-height: 410px;
+            background: linear-gradient(#09292687,#09292687),url('https://images.unsplash.com/photo-1524666041070-9d87656c25bb?auto=format&fit=crop&w=1200&q=80') center/cover;
+            display: grid;
+            place-items: center;
+            text-align: center;
+            color: #fff
+        }
+
+            .map h3 {
+                font: 2rem Georgia,serif;
+                margin: 0
+            }
+
+        .socials {
+            display: flex;
+            gap: .7rem;
+            margin-top: 1.1rem
+        }
+
+            .socials a {
+                padding: .55rem .8rem;
+                border: 1px solid #ffffff88;
+                border-radius: 8px;
+                font-weight: bold;
+                font-size: .85rem
+            }
+
+                .socials a:hover {
+                    background: #fff;
+                    color: var(--green)
+                }
+
+        footer {
+            padding: 24px 0;
+            background: #061d1b;
+            color: #d5e1dd;
+            font-size: .84rem
+        }
+
+        .foot {
+            display: flex;
+            justify-content: space-between;
+            gap: 1rem
+        }
+
+        .whatsapp {
+            position: fixed;
+            right: 20px;
+            bottom: 20px;
+            z-index: 9;
+            width: 58px;
+            height: 58px;
+            border-radius: 50%;
+            display: grid;
+            place-items: center;
+            background: #25d366;
+            color: #073f21;
+            box-shadow: 0 8px 23px #0004;
+            font-size: 1.5rem;
+            font-weight: bold
+        }
+
+        html[data-theme="dark"] {
+            --cream: #0c1816;
+            --sand: #142522;
+            --text: #edf7f1;
+            --muted: #b6c7c0;
+            --green: #236b63;
+            --deep: #061d1b;
+            --gold: #e6b46b;
+            --shadow: 0 16px 40px #0008
+        }
+
+            html[data-theme="dark"] .reviews {
+                background: #132321
+            }
+
+            html[data-theme="dark"] .review,
+            html[data-theme="dark"] .brand-pill,
+            html[data-theme="dark"] .booking-form {
+                background: #1a302c;
+                color: #edf7f1;
+                box-shadow: 0 5px 20px #0004
+            }
+
+                html[data-theme="dark"] .review blockquote,
+                html[data-theme="dark"] .form-note {
+                    color: #c5d6cf
+                }
+
+            html[data-theme="dark"] input,
+            html[data-theme="dark"] select,
+            html[data-theme="dark"] textarea {
+                background: #0d211e;
+                color: #edf7f1;
+                border-color: #41635d
+            }
+
+            html[data-theme="dark"] .hero-note {
+                background: #1a302c;
+                color: #edf7f1
+            }
+
+            html[data-theme="dark"] .faq-list details,
+            html[data-theme="dark"] .contact li {
+                border-color: #ffffff24
+            }
+
+        @media(max-width:760px) {
+            .links {
+                display: none
+            }
+
+            .hero {
+                min-height: 650px
+            }
+
+                .hero:after {
+                    background: linear-gradient(90deg,#061d1be8,#0929268c)
+                }
+
+            .hero-copy {
+                padding: 135px 0 105px
+            }
+
+            .hero-note {
+                left: 20px;
+                right: auto;
+                font-size: .78rem
+            }
+
+            .intro, .booking-grid, .faq {
+                grid-template-columns: 1fr;
+                gap: 32px
+            }
+
+            .photo {
+                height: 330px;
+                order: -1
+            }
+
+            .cards, .review-grid {
+                grid-template-columns: 1fr 1fr
+            }
+
+            .gallery {
+                grid-template-columns: 1fr 1fr;
+                grid-template-rows: 220px 150px 150px
+            }
+
+                .gallery figure:first-child {
+                    grid-column: span 2;
+                    grid-row: auto
+                }
+
+            .visit-grid {
+                grid-template-columns: 1fr
+            }
+
+            .visit-copy {
+                padding: 65px 20px
+            }
+
+            .map {
+                min-height: 300px
+            }
+
+            .foot {
+                display: block
+            }
+
+                .foot p {
+                    margin: .3rem 0
+                }
+
+            section {
+                padding: 68px 0
+            }
+
+            .nav-actions .btn {
+                padding: .65rem .75rem;
+                font-size: .75rem
+            }
+
+            .theme-toggle {
+                padding: .55rem
+            }
+
+                .theme-toggle span:last-child {
+                    display: none
+                }
+        }
+
+        @media(max-width:420px) {
+            .cards, .review-grid, .form-grid {
+                grid-template-columns: 1fr
+            }
+
+            .field.full {
+                grid-column: auto
+            }
+
+            .benefits {
+                grid-template-columns: 1fr
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav class="nav wrap">
+            <a class="brand" href="#home">LA OPTICA<small>EYECARE</small></a>
+
+            <div class="links">
+                <a href="#about">About</a>
+                <a href="#services">Services</a>
+                <a href="#gallery">Gallery</a>
+                <a href="#reviews">Reviews</a>
+                <a href="#visit">Contact</a>
+            </div>
+
+            <div class="nav-actions">
+                <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch to dark theme" aria-pressed="false">
+                    <span aria-hidden="true">☾</span><span>Dark</span>
+                </button>
+                <a class="btn light" href="#book">Book eye test</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero" id="home">
+            <img src="https://images.unsplash.com/photo-1511499767150-a48a237f0083?auto=format&fit=crop&w=1800&q=85" alt="Stylish sunglasses">
+
+            <div class="wrap hero-copy">
+                <div class="eyebrow">Muthalakodam · Thodupuzha</div>
+                <h1>Clearer vision.<br>Better style.</h1>
+                <p>Eye tests, prescription glasses, sunglasses and personal frame styling at your local optical store in Thodupuzha.</p>
+
+                <div class="actions">
+                    <a class="btn gold" href="#book">Book an eye test</a>
+                    <a class="btn light" href="tel:+919562596660">Call +91 95625 96660</a>
+                </div>
+            </div>
+
+            <div class="hero-note">Open daily · 8:30 am–7:30 pm</div>
+        </section>
+
+        <section id="about">
+            <div class="wrap intro">
+                <div>
+                    <div class="eyebrow">LA OPTICA EYECARE</div>
+                    <h2>Eyewear that feels as good as it looks.</h2>
+                    <p>We help you choose frames and lenses that suit your prescription, daily routine and personal style. From an eye test through final fitting, you receive attentive, one-to-one service.</p>
+
+                    <div class="benefits">
+                        <div class="benefit">Personal frame styling</div>
+                        <div class="benefit">Prescription lens advice</div>
+                        <div class="benefit">Comfortable adjustments</div>
+                    </div>
+                </div>
+
+                <div class="photo">
+                    <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=900&q=85" alt="Customer wearing eyeglasses">
+                </div>
+            </div>
+        </section>
+
+        <section class="services" id="services">
+            <div class="wrap">
+                <div class="eyebrow">Services</div>
+                <h2 class="title">Everything for your eyes and eyewear.</h2>
+
+                <div class="cards">
+                    <article class="card"><b>01</b><h3>Eye tests</h3><p>Vision checks and practical guidance on your prescription.</p></article>
+                    <article class="card"><b>02</b><h3>Prescription glasses</h3><p>Frames and lenses selected for comfort, clarity and your routine.</p></article>
+                    <article class="card"><b>03</b><h3>Sunglasses</h3><p>Stylish protection for driving, daily wear and outdoor time.</p></article>
+                    <article class="card"><b>04</b><h3>Kids' eyewear</h3><p>Comfortable, durable options for growing eyes and active days.</p></article>
+                    <article class="card"><b>05</b><h3>Advanced lenses</h3><p>Ask about progressive, thin, anti-glare and blue-light lenses.</p></article>
+                    <article class="card"><b>06</b><h3>Adjustments & repairs</h3><p>Frame fitting, minor repairs and eyewear care where available.</p></article>
+                </div>
+            </div>
+        </section>
+
+        <section class="brands">
+            <div class="wrap">
+                <div class="eyebrow">Frames &amp; lens brands</div>
+                <h2 class="title">A collection for every face and budget.</h2>
+                <p class="sub">Explore selected eyewear and audio brands available at LA OPTICA EYECARE.</p>
+
+                <div class="brand-list">
+                    <span class="brand-pill">Ray-Ban</span>
+                    <span class="brand-pill">Carrera</span>
+                    <span class="brand-pill">Tommy Hilfiger</span>
+                    <span class="brand-pill">Bose</span>
+                    <span class="brand-pill">Vogue</span>
+                </div>
+
+                <div class="offer">
+                    <strong>In-store offer:</strong>
+                    Free frame styling consultation. Visit us or book on WhatsApp to find a frame that suits you.
+                </div>
+            </div>
+        </section>
+
+        <section id="gallery">
+            <div class="wrap">
+                <div class="eyebrow">Inside LA OPTICA</div>
+                <h2 class="title">Frames, care and everyday confidence.</h2>
+                <p class="sub">Replace these sample images with real photographs of your shop, staff and products.</p>
+
+                <div class="gallery">
+                    <figure><img src="https://images.unsplash.com/photo-1508296695146-257a814070b4?auto=format&fit=crop&w=1000&q=85" alt="Frames on display"><figcaption>Frame collection</figcaption></figure>
+                    <figure><img src="https://images.unsplash.com/photo-1505751172876-fa1923c5c528?auto=format&fit=crop&w=700&q=85" alt="Eye test equipment"><figcaption>Eye care</figcaption></figure>
+                    <figure><img src="https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?auto=format&fit=crop&w=700&q=85" alt="Customer wearing glasses"><figcaption>Your style</figcaption></figure>
+                    <figure><img src="https://images.unsplash.com/photo-1516641051054-9df6a1aad654?auto=format&fit=crop&w=700&q=85" alt="Sunglasses"><figcaption>Sunglasses</figcaption></figure>
+                    <figure><img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=700&q=85" alt="Fashion eyewear"><figcaption>New arrivals</figcaption></figure>
+                </div>
+            </div>
+        </section>
+
+        <section class="reviews" id="reviews">
+            <div class="wrap">
+                <div class="eyebrow">Customer reviews</div>
+                <h2 class="title">Trusted by our customers.</h2>
+                <p class="sub"><strong>Important:</strong> replace these samples with genuine customer reviews before publishing.</p>
+
+                <div class="review-grid">
+                    <article class="review"><div class="stars">★★★★★</div><blockquote>“Excellent service and a great collection of frames. The staff were very friendly and helpful. Highly recommended!”</blockquote><cite>shreya patel · Google review</cite></article>
+                    <article class="review"><div class="stars">★★★★★</div><blockquote>“Very good optical shop with quality products and reasonable prices. The eye-testing service was also excellent.”</blockquote><cite>unknown user · instagram review</cite></article>
+                    <article class="review"><div class="stars">★★★★★</div><blockquote>I had a great experience here. The staff explained everything clearly and helped me choose the right frame. Very satisfied!”</blockquote><cite>james p · facebook review</cite></article>
+                </div>
+            </div>
+        </section>
+
+        <section class="booking" id="book">
+            <div class="wrap booking-grid">
+                <div>
+                    <div class="eyebrow">Appointments</div>
+                    <h2>Book your eye test in a minute.</h2>
+                    <p>Submitting this form opens WhatsApp with your appointment request ready to send.</p>
+                    <p><strong>Prefer to talk?</strong><br><a href="tel:+919562596660">Call +91 95625 96660</a></p>
+                </div>
+
+                <form class="booking-form" id="appointmentForm">
+                    <div class="form-grid">
+                        <label class="field">Your name<input name="name" required autocomplete="name" placeholder="Your name"></label>
+                        <label class="field">Phone number<input name="phone" required inputmode="tel" autocomplete="tel" placeholder="Your phone number"></label>
+                        <label class="field">Service<select name="service"><option>Eye test</option><option>Prescription glasses</option><option>Sunglasses</option><option>Frame adjustment or repair</option><option>Other enquiry</option></select></label>
+                        <label class="field">Preferred date<input name="date" type="date"></label>
+                        <label class="field full">Preferred time<input name="time" type="time"></label>
+                        <label class="field full">Anything else?<textarea name="note" placeholder="Your frame preference or question"></textarea></label>
+                    </div>
+
+                    <p class="form-note">Please do not enter medical details in this form.</p>
+                    <button class="btn gold" type="submit">Continue on WhatsApp</button>
+                </form>
+            </div>
+        </section>
+
+        <section id="faq">
+            <div class="wrap faq">
+                <div>
+                    <div class="eyebrow">Questions</div>
+                    <h2 class="title">Helpful information before you visit.</h2>
+                    <p class="sub">Everything you need to know for a smooth visit to LA OPTICA EYECARE.</p>
+                </div>
+
+                <div class="faq-list">
+                    <details><summary>Do I need an appointment for an eye test?</summary><p>We recommend booking before you visit so we can prepare for your appointment and help minimise waiting time. Use the form above, message us on WhatsApp, or call +91 95625 96660.</p></details>
+                    <details><summary>What should I bring for my eye test or new glasses?</summary><p>Please bring your current glasses and any existing prescription if you have one. This helps us understand your current needs and discuss suitable options.</p></details>
+                    <details><summary>How long do prescription glasses take?</summary><p>Delivery time depends on your prescription, selected frame and lens type. Our team will confirm an estimated ready date before you place your order.</p></details>
+                    <details><summary>Can you adjust or repair my frame?</summary><p>Bring your eyewear to the store and we will inspect it first. We can then explain whether an adjustment or repair is possible.</p></details>
+                    <details><summary>Which payment methods do you accept?</summary><p>Please call or message us before your visit for the latest accepted payment options.</p></details>
+                    <details><summary>Is parking available nearby?</summary><p>Parking availability can vary during the day. Call us before visiting if you would like local guidance.</p></details>
+                </div>
+            </div>
+        </section>
+
+        <section class="visit" id="visit">
+            <div class="visit-grid">
+                <div class="visit-copy">
+                    <div class="eyebrow">Visit us</div>
+                    <h2 class="title">LA OPTICA EYECARE, Thodupuzha.</h2>
+
+                    <ul class="contact">
+                        <li><strong>Address</strong><br>Njarakulathu Building, Muthalakodam, Thodupuzha, Kerala 685605</li>
+                        <li><strong>Phone</strong><br><a href="tel:+919562596660">+91 95625 96660</a></li>
+                        <li><strong>Email</strong><br><a href="mailto:mail@laoptica.in">mail@laoptica.in</a></li>
+                        <li><strong>Hours</strong><br>Daily · 8:30 am–7:30 pm</li>
+                    </ul>
+
+                    <a class="btn gold" href="https://www.google.com/maps/search/?api=1&query=LA+OPTICA+EYECARE%2C+Muthalakodam%2C+Thodupuzha" target="_blank" rel="noopener">Get directions</a>
+
+                    <div class="socials">
+                        <a href="https://www.instagram.com/laoptica_muthalakodam?stkn=dW8wcXhtNjYzMmdk&utm_source=qr" target="_blank" rel="noopener">Instagram</a>
+                        <a href="https://facebook.com/YOUR_FACEBOOK" target="_blank" rel="noopener">Facebook</a>
+                    </div>
+                </div>
+
+                <a class="map" href="https://www.google.com/maps/search/?api=1&query=LA+OPTICA+EYECARE%2C+Muthalakodam%2C+Thodupuzha" target="_blank" rel="noopener">
+                    <div><h3>Find us in Muthalakodam</h3><p>Open Google Maps →</p></div>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="wrap foot">
+            <p>© <span id="year"></span> LA OPTICA EYECARE. All rights reserved.</p>
+            <p><a href="#home">Back to top ↑</a></p>
+        </div>
+    </footer>
+
+    <a class="whatsapp" href="https://wa.me/919562596660?text=Hello%20LA%20OPTICA%2C%20I%20would%20like%20to%20make%20an%20enquiry." aria-label="Message LA OPTICA on WhatsApp">☏</a>
+
+    <script>
+            document.getElementById("year").textContent = new Date().getFullYear();
+
+            const themeToggle = document.getElementById("themeToggle");
+            const savedTheme = localStorage.getItem("laoptica-theme");
+            const preferredTheme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+
+            function setTheme(theme) {
+              document.documentElement.dataset.theme = theme;
+              const isDark = theme === "dark";
+
+              themeToggle.setAttribute("aria-pressed", String(isDark));
+              themeToggle.setAttribute("aria-label", isDark ? "Switch to light theme" : "Switch to dark theme");
+              themeToggle.innerHTML = isDark
+                ? '<span aria-hidden="true">☀</span><span>Light</span>'
+                : '<span aria-hidden="true">☾</span><span>Dark</span>';
+            }
+
+            setTheme(savedTheme || preferredTheme);
+
+            themeToggle.addEventListener("click", () => {
+              const nextTheme = document.documentElement.dataset.theme === "dark" ? "light" : "dark";
+              setTheme(nextTheme);
+              localStorage.setItem("laoptica-theme", nextTheme);
+            });
+
+            document.getElementById("appointmentForm").addEventListener("submit", function (event) {
+              event.preventDefault();
+
+              const data = new FormData(this);
+              const value = (key) => (data.get(key) || "Not specified").trim();
+
+              const message = `Hello LA OPTICA, I would like to book an appointment.
+
+Name: ${value("name")}
+Phone: ${value("phone")}
+Service: ${value("service")}
+Preferred date: ${value("date")}
+Preferred time: ${value("time")}
+Note: ${value("note")}`;
+
+              window.open(
+                "https://wa.me/919562596660?text=" + encodeURIComponent(message),
+                "_blank",
+                "noopener"
+              );
+            });
+    </script>
+</body>
+</html>
